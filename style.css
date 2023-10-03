@@ -1,0 +1,104 @@
+/*** General Styles ***/
+:root {
+  font-size: clamp(30%, calc(2vw + 1%), 62.5%);
+
+  --hue: 194;
+  --bg-color: hsl(var(--hue), 5%, 7%);
+  --text-color: hsl(var(--hue), 40%, 98%);
+  --primary-color: hsl(var(--hue), 100%, 63%);
+  --controls-bg-color: hsl(var(--hue), 0%, 14%);
+  --button-secondary: hsl(var(--hue), 40%, 98%);
+}
+
+html:not(.running) .ph-pause-circle,
+html:not(.running) .ph-stop-circle,
+html:not(.music-on) .ph-speaker-high,
+html.running .ph-play-circle,
+html.running .ph-timer,
+.music-on .ph-speaker-none {
+  display: none;
+}
+
+html.light-mode {
+  --bg-color: hsl(var(--hue), 40%, 98%);
+  --text-color: hsl(var(--hue), 5%, 7%);
+}
+
+html.light-mode .ph-sun,
+html:not(.light-mode) .ph-moon {
+  display: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  transition: color 0.3s ease-out, background-color 0.3s ease-out;
+}
+
+/*** Utilities ***/
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.sr-only {
+  position: absolute;
+  overflow: hidden;
+  width: 0.1rem;
+  height: 0.1rem;
+  margin: -0.1rem;
+  padding: 0;
+  border: 0;
+  appearance: none;
+}
+
+/*** App ***/
+#app {
+  display: grid;
+  justify-items: center;
+  gap: 1.6rem;
+}
+
+#toggle-mode {
+  position: absolute;
+  top: 3.2rem;
+  right: 3.2rem;
+  font-size: 3.2rem;
+  line-height: 0;
+  color: var(--text-color);
+  transition: color 0.3s ease-out;
+}
+
+#timer {
+  font-family: 'Roboto', sans-serif;
+  font-size: 9.6rem;
+  font-weight: 700;
+}
+
+#controls {
+  gap: 1.6rem;
+  padding: 2.2rem 4rem;
+  background-color: var(--controls-bg-color);
+  border-radius: 90rem;
+}
+
+button {
+  font-size: 6.4rem;
+  color: var(--primary-color);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.secondary {
+  color: var(--button-secondary);
+}

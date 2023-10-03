@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
+
+    <meta name="keywords" content="Pomodoro, Cronômetro, Temporizador, Foco" />
+    <meta
+      name="description"
+      content="Temporizador interativo que utiliza a metodologia Pomodoro."
+    />
+
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="./script.js" type="module" defer></script>
+
+    <link rel="icon" href="./assets/img/favicon.svg" type="image/x-svg" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+    <title>FocusTimer - Pomodoro</title>
+  </head>
+
+  <body>
+    <div id="app">
+      <button id="toggle-mode">
+        <span class="sr-only">Ativar Light Mode!</span>
+        <i class="ph-bold ph-sun"></i>
+        <i class="ph-bold ph-moon"></i>
+      </button>
+
+      <section id="timer" class="flex">
+        <span id="minutes">00</span>
+        <span>:</span>
+        <span id="seconds">00</span>
+      </section>
+
+      <section id="controls" class="flex">
+        <button class="ph ph-play-circle" data-action="toggleRunning">
+          <span class="sr-only">Iniciar contador</span>
+        </button>
+
+        <button class="ph ph-pause-circle" data-action="toggleRunning">
+          <span class="sr-only">Pausar contador</span>
+        </button>
+
+        <button class="ph ph-timer secondary" data-action="set">
+          <span class="sr-only">Ajustar contador</span>
+        </button>
+
+        <button class="ph ph-stop-circle secondary" data-action="reset">
+          <span class="sr-only">Reiniciar contador</span>
+        </button>
+
+        <button class="ph ph-speaker-none secondary" data-action="toggleMusic">
+          <span class="sr-only">Iniciar música</span>
+        </button>
+
+        <button class="ph ph-speaker-high" data-action="toggleMusic">
+          <span class="sr-only">Parar música</span>
+        </button>
+      </section>
+    </div>
+  </body>
+</html>
