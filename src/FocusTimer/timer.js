@@ -29,8 +29,6 @@ export function countdown() {
 
   updateDisplay(minutes, seconds)
   state.countdownID = setTimeout(() => countdown(), 1000)
-
-  console.log(state.countdownID)
 }
 
 // Pesquisar mais sobre Nullish operator "??"
